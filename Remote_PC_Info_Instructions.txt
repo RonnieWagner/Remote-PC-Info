@@ -1,0 +1,43 @@
+Remote PC Info Tool - Instructions
+
+Overview:
+This tool gathers system information from a remote Windows PC through a simple graphical window. It retrieves:
+- Logged in user
+- PC model
+- Last reboot time
+- Total and free disk space (in GB)
+The script automatically requests admin rights and launches its GUI without requiring the user to open PowerShell manually.
+
+How to Use:
+
+1. Copy the Script to Your Desktop
+The script must be saved on your local Windows desktop. Do not run it from a network share or synced folder.
+Save it to:
+C:\Users\<yourusername>\Desktop
+
+2. Run the Script
+- Double-click the .ps1 file on your desktop.
+- When the UAC prompt appears, enter your admin credentials.
+- The Remote PC Info window will appear.
+- Enter the remote computer name (example: PC12345).
+- Click "Get Info" to retrieve system details.
+
+Important Notes:
+- The script will not run properly from network locations such as file shares, OneDrive, Teams, or SharePoint.
+- Running locally is required for UAC elevation and for the GUI to display correctly.
+- Remote queries require that the target PC is powered on and reachable on the network.
+- If you see "Unavailable" for any item, the PC may be offline, blocked by firewall, or you may lack permissions.
+
+Troubleshooting:
+
+Problem: Script closes immediately after UAC prompt.
+Cause: Script was run from a network path or cloud-synced folder.
+Solution: Move the script to your local desktop and run it again.
+
+Problem: No information returned for the remote PC.
+- Verify the PC name is correct.
+- Confirm the PC is powered on.
+- Ensure you used administrative credentials.
+- Make sure firewall settings allow remote WMI/CIM queries.
+
+End of Instructions.
